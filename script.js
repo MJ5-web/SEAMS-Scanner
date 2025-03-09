@@ -44,5 +44,23 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Camera Error:", err);
         });
 });
+let constraints = {
+    video: { facingMode: "environment" }  // "user" for front camera
+};
+
+navigator.mediaDevices.getUserMedia(constraints)
+    .then((stream) => {
+        let html5QrCode = new Html5Qrcode("reader");
+        html5QrCode.start(
+            stream,
+            { fps: 10, qrbox: { width: 250, height: 250 } },
+            onScanSuccess,
+            onScanFailure
+        );
+    })
+    .catch((err) => {
+        console.error("Camera error:", err);
+        alert("Camera not found. Check permissions and restart.");
+    });
 
 
