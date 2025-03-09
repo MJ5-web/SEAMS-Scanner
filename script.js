@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Ensure camera access works
     navigator.mediaDevices.getUserMedia({ video: true })
         .then(function (stream) {
-            let html5QrCode = new Html5Qrcode("reader");
+            let html5QrCode = new Html5QrCode("reader");
             html5QrCode.start(
                 { facingMode: "environment" },  // Use rear camera
                 { fps: 10, qrbox: { width: 250, height: 250 } },
@@ -44,4 +44,5 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Camera Error:", err);
         });
 });
+
 
