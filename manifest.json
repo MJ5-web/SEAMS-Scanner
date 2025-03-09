@@ -1,6 +1,6 @@
 {
-    "name": "QR Code Scanner",
-    "short_name": "QR Scanner",
+    "name": "SEAMS-Scanner",
+    "short_name": "SEAMS QR",
     "start_url": "index.html",
     "display": "standalone",
     "background_color": "#ffffff",
